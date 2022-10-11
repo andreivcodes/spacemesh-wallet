@@ -10,6 +10,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@andreivcodes/spacemeshlib": "^1.0.36",
     "expo": "~46.0.13",
     "expo-status-bar": "~1.4.0",
     "nativewind": "^2.0.11",
