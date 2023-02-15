@@ -18,20 +18,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.andreivcodes.spacemeshwallet"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.andreivcodes.spacemeshwallet"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "02cb12be-e874-42e3-8e63-01e5ff4c92dd"
+        "projectId": "e7e68f58-c7c6-46f3-9c80-cabd2cf27186"
       }
     }
   }

@@ -3,30 +3,44 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "proxy": "./proxy/grpcwebproxy-v0.15.0-osx-x86_64 --backend_addr=devnet-323-short-api.spacemesh.io:443 --run_tls_server=false --backend_tls_noverify --backend_tls",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "NODE_OPTIONS=--openssl-legacy-provider expo start --web"
+    "web": "NODE_OPTIONS=--openssl-legacy-provider expo start --web",
+    "proto": "protoc  -I=./src/proto -I=./src/proto/google ./src/proto/spacemesh/v1/*.proto  --js_out=import_style=commonjs:./src/proto/build  --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./src/proto/build;"
   },
   "dependencies": {
-    "expo": "~47.0.12",
+    "@improbable-eng/grpc-web": "^0.15.0",
+    "@improbable-eng/grpc-web-node-http-transport": "^0.15.0",
+    "@react-native-async-storage/async-storage": "~1.17.11",
+    "bip39": "^3.0.4",
+    "buffer": "^6.0.3",
+    "expo": "47.0.13",
+    "expo-crypto-polyfills": "^1.1.0",
     "expo-status-bar": "~1.4.2",
+    "google-protobuf": "^3.21.2",
+    "grpc-web": "^1.4.2",
+    "long": "^5.2.1",
     "nativewind": "^2.0.11",
+    "protobufjs": "^7.2.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
-    "react-native-web": "~0.18.9"
+    "react-native-get-random-values": "~1.8.0",
+    "react-native-web": "~0.18.12"
   },
   "devDependencies": {
-    "@expo/webpack-config": "^0.17.2",
-    "@babel/core": "^7.12.9",
-    "@types/react": "~18.0.14",
-    "@types/react-native": "~0.70.6",
-    "tailwindcss": "^3.2.4",
-    "autoprefixer": "^10.4.8",
-    "postcss": "^8.4.16",
-    "postcss-loader": "^4.2.0",
-    "typescript": "^4.6.3"
+    "@babel/core": "^7.20.12",
+    "@expo/webpack-config": "18.0.1",
+    "@types/react": "~18.0.28",
+    "@types/react-native": "~0.71.2",
+    "autoprefixer": "^10.4.13",
+    "node-libs-react-native": "^1.2.1",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.0.2",
+    "tailwindcss": "^3.2.6",
+    "typescript": "^4.9.5"
   },
   "private": true
 }
